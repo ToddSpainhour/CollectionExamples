@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CollectionExamples.LinqStuff;
+using System;
 using System.Collections.Generic; // most collections will be found here
-using System.Runtime.InteropServices;
-using System.Security;
+using System.Linq;
+using CollectionExamples;
+
 
 namespace CollectionExamples
 {
@@ -9,6 +11,11 @@ namespace CollectionExamples
     {
         static void Main(string[] args)
         {
+
+            var example = new Example();
+
+            example.Run();
+
             Console.WriteLine("Hello Collections!");
 
 
@@ -46,11 +53,14 @@ namespace CollectionExamples
             // is this item in a list?
             var isToddInTheList = evening11.Contains("Todd");
 
+
             // ternary inside interpolated strings have to be in parenthases 
             Console.WriteLine($"Todd is {(isToddInTheList ? "in this list." : "is not in this list.")}");
 
+
             // Find only gets first match
             var matchingPerson = evening11.Find(person => person.StartsWith("M"));
+
 
             Console.WriteLine($"{matchingPerson} is the first string in this list that starts with 'M'");
 
@@ -67,6 +77,7 @@ namespace CollectionExamples
             // use when you are reading more than writing
 
             var words = new Dictionary<string,string>();
+
 
             // add an item to my dictionary that has the key 'pedantic' and a value that goes with it which is 'Like a pedant'
             words.Add("pedantic", "Like a pedant");
@@ -92,9 +103,9 @@ namespace CollectionExamples
             }
 
 
-
-
             Console.WriteLine($"The fake definition of Congratulations is {words["congratulate"]}");
+
+
 
 
             foreach (var entry in words)
@@ -103,8 +114,11 @@ namespace CollectionExamples
             }
 
 
+
+
             // setting an existing key to a new value
             words["congratulate"] = "stuff";
+
 
 
 
@@ -115,8 +129,12 @@ namespace CollectionExamples
             }
 
 
+
+
             // value of the dictionary is a list of strings
             var wordsWithMultipleDefinitions = new Dictionary<string, List<string>>();
+
+
 
 
             // collection initializer
@@ -127,6 +145,9 @@ namespace CollectionExamples
                 "Extremely attentive to detail"
             });   
         
+
+
+
         foreach (var(word, definitions) in wordsWithMultipleDefinitions)
             {
                 Console.WriteLine($"{word} is defined as : ");
@@ -146,6 +167,8 @@ namespace CollectionExamples
             queue.Enqueue("third");
 
 
+
+
             ///FIFO - first in first out
             
             foreach (var item in queue)
@@ -154,8 +177,14 @@ namespace CollectionExamples
             }
 
         
-        
-        
+
+
+
+
+
+
+
+
         
         }
     }
